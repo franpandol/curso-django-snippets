@@ -49,6 +49,7 @@ EXTERNAL_APPS = (
     #'fm',  # Form ModalView
     #'bootstrap3_datetime',
     'django_extensions',
+    'braces',
     #'registration',
     #'django_tables2',
 )
