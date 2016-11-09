@@ -20,6 +20,7 @@ from django.contrib.staticfiles.views import serve
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^admin/funcion', admin.site.urls),
     url(r'^snippets/', include('snippets.urls', namespace='snippets')),
 	url(r'^static/(?P<path>.*)$', serve),
 ]

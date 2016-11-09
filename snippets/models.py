@@ -22,3 +22,6 @@ class Snippet(models.Model):
 
     class Meta:
         ordering = ('fecha_creacion',)
+
+    def __str__(self):
+        return self.titulo

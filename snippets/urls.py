@@ -4,5 +4,5 @@ from .views import WebIndex
 urlpatterns = [
     url(r'^$',
       WebIndex.as_view(),
-      name='index'),
+      name='index'), 
 ]

@@ -5,6 +5,7 @@ from braces.views import (
     GroupRequiredMixin,
     LoginRequiredMixin,
 )
+from .models import Snippet
 
 class WebIndex(TemplateView):
     template_name = 'snippets/index.html'
@@ -12,6 +13,7 @@ class WebIndex(TemplateView):
     def get_context_data(self, *args, **kwargs):
         # Indicar contenido a mostrar en la página inicial.
         snippets = Snippet.objects.all()
+
         context = super(WebIndex, self).get_context_data(*args, **kwargs)
         context['snippets'] = snippets
         return context
