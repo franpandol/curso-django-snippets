@@ -1,0 +1,9 @@
+db.sqlite3
+components/*
+static/*
+*.pyc
+*.pyo
+*/migrations/0*
+media/*
+snippets/local_config.py
+logs/*
