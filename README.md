@@ -8,7 +8,7 @@ Paquetes necesarios:
 
 Clone the repository: 
 
-    $ git clone 
+    $ git clone https://github.com/franpandol/curso-django-snippets.git
 
 Create and activate the virtual environment
 
@@ -51,6 +51,6 @@ and delete the definition of DATABASES in settings.py because you are importing 
 Initialize the database and set-up the Django environment: 
 
     (snippets)$ cd snippets/
-    (snippets)$ ./manage.py bower_install
     (snippets)$ ./manage.py collectstatic
     (snippets)$ ./manage.py makemigrations
+    (snippets)$ ./manage.py migrate
