@@ -19,7 +19,7 @@ class WebIndex(TemplateView):
         snippets = Snippet.objects.all()
         #fecha = timezone.now()
 
-        context['arboles'] = snippets
+        context['snippets'] = snippets
         #context['fecha'] = fecha
         return context
 
