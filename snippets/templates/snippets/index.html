@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% for snippet in snippets %}
-        {{ snippet }}
-    {% endfor %}
+    
+<h1>Snippets List</h1>
+<a href="{% url 'snippets:list' %}">Listado de Snippets</a>
+
 {% endblock content %}

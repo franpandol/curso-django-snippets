@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for snippets in object_list %}
+        {{ snippets.titulo }}
+        {{ snippets.fecha_creacion }}
+    {% endfor %}
+
+{% endblock %}

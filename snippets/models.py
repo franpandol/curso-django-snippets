@@ -19,7 +19,9 @@ class Snippet(models.Model):
     #linenos = models.BooleanField(default=False)
     lenguaje = models.CharField(choices=LANGUAGE_CHOICES, default=LANGUAGE_CHOICES[0][0], max_length=2)
     #estilo = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
+    publicado = models.BooleanField(default=True)
 
+    
     class Meta:
         ordering = ('fecha_creacion',)
 
