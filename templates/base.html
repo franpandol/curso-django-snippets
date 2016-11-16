@@ -3,12 +3,12 @@
 <head>
     <title></title>
 
-
+{% block extra_header %}{% endblock %}
 </head>
 
 
 <body>
-<h1>Bienvenidos</h1>
+<h1>{% block title %}{% endblock %}</h1>
 
 
 {% block sidebar %}
@@ -18,5 +18,8 @@
 {% block content %}
     
 {% endblock content %}
+
+{% block javascript %}
+{% endblock %}
 </body>
 </html>

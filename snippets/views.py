@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.views.generic import ListView
+from django.views.generic.detail import DetailView
 
 from braces.views import (
     GroupRequiredMixin,
     LoginRequiredMixin,
 )
 from .models import Snippet
+
 
 class WebIndex(TemplateView):
     template_name = 'snippets/index.html'
@@ -21,6 +23,7 @@ class WebIndex(TemplateView):
         #context['fecha'] = fecha
         return context
 
+
 class SnippetsList(ListView):
     """ Lista de trámites.  Búsqueda de trámites  """
     model = Snippet
@@ -29,9 +32,21 @@ class SnippetsList(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super(SnippetsList, self).get_context_data(*args, **kwargs)
+        #print(context['objects_list'])
         return context
 
     def get_queryset(self):
 
         result = self.model.objects.filter(publicado=True)
         return result
+
+
+class SnippetsDetail(DetailView):
+    """ Detalle de un trámite """
+    model = Snippet
+    template_name = 'snippets/detail.html'
+
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(SnippetsDetail, self).get_context_data(*args, **kwargs)
+        return context

@@ -4,6 +4,7 @@
     {% for snippets in object_list %}
         {{ snippets.titulo }}
         {{ snippets.fecha_creacion }}
+        <a href="{% url 'snippets:detail' snippets.pk %}">Detalle</a>
     {% endfor %}
 
 {% endblock %}

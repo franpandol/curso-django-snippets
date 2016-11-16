@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Detalle del snippet con titulo: {{object.titulo}}
+{% endblock %}
+{% block content %}
+    {{ object.titulo}}
+    {{ object.fecha_creacion}}
+{% endblock %}
