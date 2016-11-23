@@ -3,7 +3,8 @@ from django.views.generic import TemplateView
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView
-
+from django.shortcuts import render
+from django.core.urlresolvers import reverse_lazy, reverse
 from braces.views import (
     GroupRequiredMixin,
     FormMessagesMixin,
@@ -76,7 +77,7 @@ class SnippetsFormMixin(FormMessagesMixin):
 
 
     def get_success_url(self):
-        return reverse('snippets:snippets-detail', kwargs={'pk': self.object.pk})
+        return reverse('snippets:detail', kwargs={'pk': self.object.pk})
 
 # https://docs.djangoproject.com/en/1.9/ref/class-based-views/generic-editing/#createview
 class SnippetsAlta(SnippetsFormMixin, CreateView):
