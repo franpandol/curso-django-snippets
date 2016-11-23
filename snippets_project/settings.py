@@ -45,7 +45,10 @@ DJANGO_APPS = (
 EXTERNAL_APPS = (
     #'bootstrap3',
     #'djangobower',
-    #'crispy_forms',
+    
+    #http://django-crispy-forms.readthedocs.io/en/latest/
+    'crispy_forms',
+    
     #'fm',  # Form ModalView
     #'bootstrap3_datetime',
     'django_extensions',
@@ -151,3 +154,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

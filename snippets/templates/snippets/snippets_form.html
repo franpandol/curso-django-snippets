@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    
+<h1>{{ title_form }}</h1>
+
+    <div class='well well-lg'>
+        <div class='row'>
+            <div class='col-md-7'>
+                    {% csrf_token %}
+                    {% crispy form %}
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

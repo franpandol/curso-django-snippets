@@ -1,6 +1,6 @@
 from django.conf.urls import include, url
-from .views import WebIndex, SnippetsList, SnippetsDetail
-from .views import AboutUs
+from .views import WebIndex, SnippetsList, SnippetsDetail, SnippetsAlta
+from .views import AboutUs, SnippetsActualizar
 urlpatterns = [
     
     url(r'^$',
@@ -15,6 +15,16 @@ urlpatterns = [
     url(r'^about_us/$',
         AboutUs.as_view(),
         name='about-us'),
+
+    url(r'^alta/$',
+        SnippetsAlta.as_view(),
+        name='alta'
+    ),
+
+    url(r'^(?P<pk>\d+)/actualizar/$',
+        SnippetsActualizar.as_view(),
+        name='edit'
+    ),
 
 
     url(r'^(?P<pk>\d+)/$',
