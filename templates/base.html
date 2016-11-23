@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>
+    {% block titulo %}
+
+
+
+            {% endblock titulo %}
+    </title>
 
 {% block extra_header %}{% endblock %}
 </head>
 
 
 <body>
-<h1>{% block title %}{% endblock %}</h1>
+<h1>
+{% block title %}
+    
+{% endblock title %}</h1>
 
-
+<div class="container">
 {% block sidebar %}
     
 {% endblock sidebar %}
-
+</div>
 {% block content %}
     
 {% endblock content %}
 
 {% block javascript %}
+{% endblock %}
+
+{% block footer %}
 {% endblock %}
 </body>
 </html>
