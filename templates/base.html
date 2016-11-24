@@ -1,37 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>
-    {% block titulo %}
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+		<title>{% block titulo %}{% endblock titulo %}</title>
+		{% block extra_header %}{% endblock %}
+	</head>
+	<body>
+		<div class="col-md-2">
+			{% include 'nav-left.html' %}
+		</div>		
+		<div class="col-md-10">		
+			{% block content %}
+			{% endblock content %}
+		</div>
 
-
-            {% endblock titulo %}
-    </title>
-
-{% block extra_header %}{% endblock %}
-</head>
-
-
-<body>
-<h1>
-{% block title %}
-    
-{% endblock title %}</h1>
-
-<div class="container">
-{% block sidebar %}
-    
-{% endblock sidebar %}
-</div>
-{% block content %}
-    
-{% endblock content %}
-
-{% block javascript %}
-{% endblock %}
-
-{% block footer %}
-{% endblock %}
-</body>
+		{% block javascript %}
+		{% endblock %}
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</body>
 </html>
