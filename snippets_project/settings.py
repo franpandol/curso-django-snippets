@@ -54,7 +54,7 @@ EXTERNAL_APPS = (
     'django_extensions',
     'braces',
     #'registration',
-    #'django_tables2',
+    'django_tables2',
 )
 
 PROJECT_APPS = (

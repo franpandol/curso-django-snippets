@@ -5,13 +5,17 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from django.shortcuts import render
 from django.core.urlresolvers import reverse_lazy, reverse
+
 from braces.views import (
     GroupRequiredMixin,
     FormMessagesMixin,
     LoginRequiredMixin,
 )
+from django_tables2 import SingleTableView
+
 from .models import Snippet
 from .forms import SnippetsFormulario
+from .tables import SnippetsTable
 
 class WebIndex(TemplateView):
     template_name = 'snippets/index.html'
@@ -29,6 +33,11 @@ class WebIndex(TemplateView):
 class AboutUs(TemplateView):
     template_name = 'snippets/about_us.html'
 
+
+class SnippetsListTable(SingleTableView):
+    model = Snippet
+    template_name = 'snippets/list_table.html'
+    table_class = SnippetsTable
 
 class SnippetsList(ListView):
     """ Lista de trámites.  Búsqueda de trámites  """
