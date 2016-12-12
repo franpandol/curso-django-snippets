@@ -14,7 +14,7 @@ from braces.views import (
 from django_tables2 import SingleTableView
 
 from .models import Snippet
-from .forms import SnippetsFormulario
+from .forms import SnippetsFormulario, QSearchFormSnippets
 from .tables import SnippetsTable
 
 class WebIndex(TemplateView):
@@ -39,6 +39,27 @@ class SnippetsListTable(SingleTableView):
     template_name = 'snippets/list_table.html'
     table_class = SnippetsTable
 
+    def get_context_data(self, *args, **kwargs):
+        query = self.request.GET.get('q')
+        context = super(SnippetsListTable, self).get_context_data(*args, **kwargs)
+        snippets_count = len(Snippet.objects.all())
+        context['snippets_count'] = snippets_count
+        context['form'] = QSearchFormSnippets()
+        if query:
+            context['query'] = query
+        return context
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        result = self.model.objects.filter(publicado=True)
+
+        if query:
+            self.kwargs.update(query=query)
+            print(result)
+            result = self.model.objects.filter(titulo__contains=query)
+            print(result)
+        return result
+
 class SnippetsList(ListView):
     """ Lista de trámites.  Búsqueda de trámites  """
     model = Snippet
@@ -50,11 +71,16 @@ class SnippetsList(ListView):
         context = super(SnippetsList, self).get_context_data(*args, **kwargs)
         snippets_count = len(Snippet.objects.all())
         context['snippets_count'] = snippets_count
-        #context['snippets_list_start_p'] = self.model.objects.filter(titulo__startwith='P')
+        context['form'] = QSearchFormSnippets()
         return context
 
     def get_queryset(self):
+        query = self.request.GET.get('q')
         result = self.model.objects.filter(publicado=True)
+        
+        if query:
+            self.kwargs.update(query=query)
+            result = self.model.objects.filter(titulo__contains=True)
         return result
 
 

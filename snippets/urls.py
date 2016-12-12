@@ -17,11 +17,11 @@ urlpatterns = [
 
     url(r'^listado/$',
         SnippetsList.as_view(),
-        name='list'),
+        name='snippets-list'),
 
     url(r'^listado_tablas/$',
         SnippetsListTable.as_view(),
-        name='list-table'),
+        name='snippets-list-table'),
 
     url(r'^about_us/$',
         AboutUs.as_view(),
@@ -29,15 +29,15 @@ urlpatterns = [
 
     url(r'^alta/$',
         SnippetsAlta.as_view(),
-        name='alta'
+        name='snippets-alta'
     ),
 
     url(r'^(?P<pk>\d+)/actualizar/$',
         SnippetsActualizar.as_view(),
-        name='edit'
+        name='snippets-edit'
     ),
 
     url(r'^(?P<pk>\d+)/$',
         SnippetsDetail.as_view(),
-        name='detail'),
+        name='snippets-detail'),
 ]
