@@ -1,7 +1,9 @@
 Django==1.9
+django-bootstrap3==7.1.0
 django-braces==1.10.0
 django-crispy-forms==1.6.1
 django-extensions==1.7.4
+django-registration-redux==1.4
 django-tables2==1.2.6
 pytz==2016.7
 six==1.10.0
