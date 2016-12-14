@@ -17,15 +17,24 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.staticfiles.views import serve
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^admin/funcion', admin.site.urls),
     
+    url(r'^', include('web.urls', namespace='web')),
+
+        # Accounts
+    url(r'^accounts/',
+        include('registration.backends.default.urls')
+    ),
     url(r'^snippets/', 
         include('snippets.urls', namespace='snippets')
     ),
 
-	url(r'^static/(?P<path>.*)$', serve),
 ]
     
+
+if settings.DEBUG: 
+    urlpatterns += [ url(r'^static/(?P<path>.*)$', serve), ] 

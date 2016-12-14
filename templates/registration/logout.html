@@ -1,0 +1,11 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Saliendo del Sistema" %}{% endblock %}
+
+{% block content %}
+
+    <p>{% trans "Saliendo del Sistema" %}.</p>
+    <meta http-equiv="REFRESH" content="0;url=/accounts/login">
+
+{% endblock %}

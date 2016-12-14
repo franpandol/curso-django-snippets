@@ -43,7 +43,7 @@ DJANGO_APPS = (
 )
 
 EXTERNAL_APPS = (
-    #'bootstrap3',
+    'bootstrap3',
     #'djangobower',
     
     #http://django-crispy-forms.readthedocs.io/en/latest/
@@ -53,12 +53,14 @@ EXTERNAL_APPS = (
     #'bootstrap3_datetime',
     'django_extensions',
     'braces',
-    #'registration',
+    'registration',
     'django_tables2',
 )
 
 PROJECT_APPS = (
     'snippets',
+    'web',
+
     #'util',
 )
 
@@ -159,3 +161,17 @@ STATICFILES_DIRS = (
 )
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+
+ACCOUNT_ACTIVATION_DAYS = 7
+LOGIN_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+# EMAIL_USE_TLS = True
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'performance@example.com.ar' #my gmail username
+# EMAIL_PORT = 587
+# DEFAULT_FROM_EMAIL = 'Curso Django <performance@example.com.ar>'
