@@ -11,8 +11,8 @@ Listado de snippets
     {% for snippets in object_list %}
             {{ snippets.titulo }}
             {{ snippets.fecha_creacion }}
-            <a href="{% url 'snippets:detail' snippets.pk %}">Detalle</a>
-            <a href="{% url 'snippets:edit' snippets.pk %}">Editar</a>
+            <a href="{% url 'snippets:snippets-detail' snippets.pk %}">Detalle</a>
+            <a href="{% url 'snippets:snippets-edit' snippets.pk %}">Editar</a>
             </br>
         {% endfor %}
 

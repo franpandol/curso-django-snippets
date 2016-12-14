@@ -1,20 +1,14 @@
 from django.conf.urls import include, url
 from .views import (
-    WebIndex,
     SnippetsList, 
     SnippetsDetail, 
     SnippetsAlta,
-    AboutUs,
     SnippetsActualizar,
     SnippetsListTable
 )
 
 urlpatterns = [
     
-    url(r'^$',
-        WebIndex.as_view(),
-        name='index'),
-
     url(r'^listado/$',
         SnippetsList.as_view(),
         name='snippets-list'),
@@ -22,10 +16,6 @@ urlpatterns = [
     url(r'^listado_tablas/$',
         SnippetsListTable.as_view(),
         name='snippets-list-table'),
-
-    url(r'^about_us/$',
-        AboutUs.as_view(),
-        name='about-us'),
 
     url(r'^alta/$',
         SnippetsAlta.as_view(),

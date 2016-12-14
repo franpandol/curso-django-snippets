@@ -50,6 +50,7 @@ class SnippetsListTable(SingleTableView):
         return context
 
     def get_queryset(self):
+      
         query = self.request.GET.get('q')
         result = self.model.objects.filter(publicado=True)
 
