@@ -1,0 +1,17 @@
+.header-right-btns{
+	margin-right:40px;
+}
+.navbar-right-own{
+	margin-right: 120px !important;
+}
+.header{
+	background-color: #B24B4B;
+	height:50px;
+}
+.header a{
+	color:#fff;
+
+}
+.header ul{
+	list-style: none;
+}

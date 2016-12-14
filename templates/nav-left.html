@@ -1,15 +1,21 @@
-{% load staticfiles %}
+<aside class="main-sidebar">
 
-<div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav side-nav">
-        <li>
-            <a href="{% url 'snippets:index' %}">Inicio</a>
-        </li>
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
             <li>
-                <a href="{% url 'snippets:snippets-list' %}">Lista</a>
+                <a href="{% url 'web:index' %}">Inicio</a>
             </li>
-            <li>
-                <a href="{% url 'snippets:snippets-list-table' %}">Tabla</a>
-            </li>
-    </ul>
-</div>
+                <li>
+                    <a href="{% url 'snippets:snippets-list' %}">Lista</a>
+                </li>
+                <li>
+                    <a href="{% url 'snippets:snippets-list-table' %}">Tabla</a>
+                </li>
+        </ul>
+        <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+</aside>

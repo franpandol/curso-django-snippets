@@ -1,0 +1,29 @@
+{% load i18n %}
+{% load staticfiles %}
+<div class="row header">
+    <!-- Top Menu Items -->
+    <ul class="nav navbar-right navbar-right-own top-nav">
+        
+        {% if request.user.is_authenticated %}
+            <ul>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="drop3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> {{ request.user }} <b class="caret"></b></a>
+                    <ul class="dropdown-menu profile-menu" aria-labelledby="drop3">
+                        <li><a href="#">Mi Perfil</a></li>
+                        <div class="dropdown-divider"></div>
+                        <li><a href="{% url 'auth_logout' %}">Salir</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+    {% else %}
+        <ul>
+            <li class="">
+                <a href="{% url 'auth_login' %}">Entrar</a><span>O</span>
+            </li>
+            <li><a href="{% url 'registration_register' %}" class="btn btn-4 blue">Unirse</a></li>
+        </ul>
+
+    {% endif %}
+      </ul>
+</div>
