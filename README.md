@@ -1,3 +1,6 @@
+Repositorio para el curso de django dictado en el Cluster Tecnólogico de Catamarca.
+
+
 Paquetes necesarios: 
 
 * python-dev
