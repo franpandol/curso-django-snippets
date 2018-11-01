@@ -1,7 +1,7 @@
-Repositorio para el curso de django dictado en el Cluster Tecnólogico de Catamarca.
+Repository for django course at Cluster Tecnólogico de Catamarca.
 
 
-Paquetes necesarios: 
+Needed packages: 
 
 * python-dev
 * postgresql
